@@ -4,31 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
+    const hasGsap = typeof gsap !== 'undefined';
+
     // Register ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+    if (hasGsap && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+    }
 
     // Hero Animations
     const heroContent = document.querySelector(".hero-content");
     const nav = document.querySelector("nav");
-    if (heroContent) {
+    if (heroContent && hasGsap) {
         const heroTl = gsap.timeline();
-        
-        if (nav) {
-            heroTl.fromTo(nav, 
-                { y: -100, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.2, ease: "power4.out" }
-            );
-        }
         
         heroTl.fromTo(".hero-content > *", 
             { y: 50, opacity: 0 },
             { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" },
-            nav ? "-=0.8" : "0"
+            "0"
         );
     }
 
     // Stats Cards Animation
-    if (document.querySelector(".stat-card")) {
+    if (document.querySelector(".stat-card") && hasGsap) {
         gsap.fromTo(".stat-card", 
             { y: 40, opacity: 0 },
             { 
@@ -46,45 +43,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // About Section Animation
-    gsap.from(".about-image", {
-        scrollTrigger: {
-            trigger: ".about-image",
-            start: "top 75%",
-        },
-        x: -100,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.out"
-    });
+    if (hasGsap) {
+        gsap.from(".about-image", {
+            scrollTrigger: {
+                trigger: ".about-image",
+                start: "top 75%",
+            },
+            x: -100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
 
-    gsap.from(".about-content > *", {
-        scrollTrigger: {
-            trigger: ".about-content",
-            start: "top 75%",
-        },
-        x: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out"
-    });
+        gsap.from(".about-content > *", {
+            scrollTrigger: {
+                trigger: ".about-content",
+                start: "top 75%",
+            },
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    }
 
     // Country Cards Animation handled by CSS reveal
     // Category Cards Animation
-    gsap.from(".category-card", {
-        scrollTrigger: {
-            trigger: "#vacancies",
-            start: "top 85%",
-        },
-        scale: 0.9,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.05,
-        ease: "back.out(1.4)"
-    });
+    if (hasGsap) {
+        gsap.from(".category-card", {
+            scrollTrigger: {
+                trigger: "#vacancies",
+                start: "top 85%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.05,
+            ease: "back.out(1.4)"
+        });
+    }
 
     // Gallery Items Animation
-    if (document.querySelector(".gallery-item")) {
+    if (document.querySelector(".gallery-item") && hasGsap) {
         gsap.from(".gallery-item", {
             scrollTrigger: {
                 trigger: ".gallery-item",
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Footer Contact Details Animation
-    if (document.querySelector(".lg\\:col-span-2 .grid")) {
+    if (document.querySelector(".lg\\:col-span-2 .grid") && hasGsap) {
         gsap.from(".lg\\:col-span-2 .grid > *", {
             scrollTrigger: {
                 trigger: ".lg\\:col-span-2",
@@ -165,18 +166,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('nav button');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('is-open');
             mobileMenu.classList.remove('translate-x-full');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         });
 
         const closeMenu = () => {
+            mobileMenu.classList.remove('is-open');
             mobileMenu.classList.add('translate-x-full');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = 'auto';
         };
 
@@ -196,14 +201,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeApplyModal = document.getElementById('close-modal');
     const applicationForm = document.getElementById('application-form');
 
-    if (applyModal && applyTriggers.length > 0) {
+    const openApplyPage = () => {
+        window.location.href = 'index.html?apply=1';
+    };
+
+    if (applyTriggers.length > 0) {
         const openModal = () => {
+            if (!applyModal) {
+                openApplyPage();
+                return;
+            }
+
             applyModal.classList.remove('pointer-events-none', 'opacity-0');
             applyModal.querySelector('.modal-content').classList.remove('scale-95', 'opacity-0');
             document.body.style.overflow = 'hidden';
         };
 
         const closeModal = () => {
+            if (!applyModal) return;
+
             applyModal.classList.add('opacity-0', 'pointer-events-none');
             applyModal.querySelector('.modal-content').classList.add('scale-95', 'opacity-0');
             document.body.style.overflow = 'auto';
@@ -215,17 +231,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 openModal();
                 // Close mobile menu if open
                 if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
+                    mobileMenu.classList.remove('is-open');
                     mobileMenu.classList.add('translate-x-full');
                 }
             });
         });
+
+        if (applyModal && new URLSearchParams(window.location.search).get('apply') === '1') {
+            openModal();
+        }
 
         if (closeApplyModal) {
             closeApplyModal.addEventListener('click', closeModal);
         }
 
         // Close on backdrop click
-        applyModal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+        if (applyModal) {
+            applyModal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+        }
 
         // Form Submission
         if (applicationForm) {

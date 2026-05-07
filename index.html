@@ -46,58 +46,61 @@
 <body class="font-inter bg-brand-dark text-white">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 px-4 py-4 md:px-6 md:py-3 transition-all duration-500">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-5 py-2 md:px-8 md:py-1.5 transition-all duration-300">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="images/logo.png" alt="Abhimaan Logo" class="h-14 w-auto drop-shadow-xl">
+    <nav class="fixed top-0 w-full z-50 px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-3 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-3 sm:px-5 md:px-8 py-1.5 sm:py-2 md:py-1.5 transition-all duration-300">
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 min-w-0">
+                <img src="images/logo.png" alt="Abhimaan Logo" class="h-9 sm:h-10 md:h-14 w-auto max-w-[140px] sm:max-w-none object-contain drop-shadow-xl">
                 <div class="flex flex-col hidden sm:flex">
-                    <span class="text-xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
-                    <span class="text-[10px] text-brand-gold tracking-[0.2em] uppercase font-bold">Foreign Recruitment</span>
+                    <span class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
+                    <span class="text-[7px] sm:text-[9px] md:text-[10px] text-brand-gold tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold">Foreign Recruitment</span>
                 </div>
             </a>
             
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <div class="hidden md:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium">
                 <a href="index.html" class="text-brand-gold">Home</a>
                 <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
                 <a href="gallery.html" class="hover:text-brand-gold transition-colors">Gallery</a>
                 <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact Us</a>
-                <button data-apply-trigger class="btn-gold px-7 py-2.5 rounded-full text-brand-dark font-bold shadow-lg">Apply Now</button>
+                <button data-apply-trigger class="btn-gold px-5 md:px-7 py-2 md:py-2.5 rounded-full text-brand-dark text-xs md:text-sm font-bold shadow-lg">Apply Now</button>
             </div>
 
-            <button class="md:hidden text-white hover:text-brand-gold transition-colors">
-                <i data-lucide="menu"></i>
-            </button>
+            <div class="md:hidden ml-auto flex items-center gap-1 shrink-0">
+                <button data-apply-trigger class="btn-gold mobile-apply-btn text-brand-dark font-bold">Apply Now</button>
+                <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" onclick="document.getElementById('mobile-menu').classList.add('is-open'); document.getElementById('mobile-menu').classList.remove('translate-x-full'); document.body.style.overflow='hidden'; this.setAttribute('aria-expanded','true');" class="w-8 h-8 flex items-center justify-center text-white hover:text-brand-gold transition-colors">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[100] translate-x-full transition-transform duration-500 md:hidden flex flex-col p-8">
-            <div class="flex justify-between items-center mb-16">
-                <div class="flex items-center gap-3">
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[100] translate-x-full transition-transform duration-500 md:hidden flex flex-col p-4 sm:p-8">
+            <div class="mobile-menu-header flex justify-between items-center mb-8 sm:mb-16">
+                <div class="mobile-menu-brand flex items-center gap-2 sm:gap-3">
                     <img src="images/logo.png" alt="Abhimaan Logo" class="h-10 w-auto drop-shadow-xl">
                     <div class="flex flex-col">
-                        <span class="text-xl font-bold tracking-tight text-white leading-none uppercase">ABHIMAAN</span>
+                        <span class="text-base sm:text-lg font-bold tracking-tight text-white leading-none uppercase">ABHIMAAN</span>
                     </div>
                 </div>
-                <button id="mobile-menu-close" class="w-12 h-12 rounded-full glass flex items-center justify-center text-white">
-                    <i data-lucide="x"></i>
+                <button id="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('is-open'); document.getElementById('mobile-menu').classList.add('translate-x-full'); document.body.style.overflow='auto'; document.getElementById('mobile-menu-btn').setAttribute('aria-expanded','false');" class="mobile-menu-close w-10 sm:w-12 h-10 sm:h-12 rounded-full glass flex items-center justify-center text-white">
+                    <i data-lucide="x" class="w-5 sm:w-6"></i>
                 </button>
             </div>
             
-            <div class="flex flex-col gap-6 text-2xl font-bold font-outfit">
-                <a href="index.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">Home</a>
-                <a href="about.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">About Us</a>
-                <a href="gallery.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">Gallery</a>
-                <a href="contact.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">Contact Us</a>
+            <div class="mobile-menu-links flex flex-col gap-4 sm:gap-6 text-xl sm:text-2xl font-bold font-outfit">
+                <a href="index.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-3 sm:pb-4">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-3 sm:pb-4">About Us</a>
+                <a href="gallery.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-3 sm:pb-4">Gallery</a>
+                <a href="contact.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-3 sm:pb-4">Contact Us</a>
             </div>
 
-            <div class="mt-auto">
-                <button data-apply-trigger class="btn-gold w-full py-5 rounded-2xl text-brand-dark font-bold text-center block text-lg shadow-xl shadow-brand-gold/10">Apply Now</button>
-                <div class="flex gap-4 mt-8 justify-center">
-                    <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400">
-                        <i data-lucide="facebook"></i>
+            <div class="mobile-menu-footer">
+                <button data-apply-trigger class="btn-gold w-full py-4 sm:py-5 rounded-xl sm:rounded-2xl text-brand-dark font-bold text-center block text-base sm:text-lg shadow-xl shadow-brand-gold/10">Apply Now</button>
+                <div class="mobile-menu-socials flex gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center">
+                    <a href="#" class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl glass flex items-center justify-center text-gray-400">
+                        <i data-lucide="facebook" class="w-5 sm:w-6"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400">
-                        <i data-lucide="instagram"></i>
+                    <a href="#" class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl glass flex items-center justify-center text-gray-400">
+                        <i data-lucide="instagram" class="w-5 sm:w-6"></i>
                     </a>
                 </div>
             </div>
@@ -105,31 +108,31 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <header class="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen flex items-center pt-16 sm:pt-20 md:pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/20 via-brand-dark/50 to-brand-dark z-10"></div>
             <img src="images/hero-bg.png" alt="Hero Background" class="w-full h-full object-cover">
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-20 w-full">
             <div class="max-w-4xl hero-content">
-                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-8">
+                <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6 sm:mb-8">
                     <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                    <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Official License #3062</span>
+                    <span class="text-brand-gold text-[10px] sm:text-xs font-bold uppercase tracking-widest">Official License #3062</span>
                 </div>
-                <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-[1.05] tracking-tight">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8 leading-[1.1] sm:leading-[1.05] tracking-tight">
                     Your Gateway to <br>
                     <span class="gold-gradient">Global Success</span>
                 </h1>
-                <p class="text-gray-400 text-xl md:text-2xl mb-12 max-w-2xl leading-relaxed font-light">
+                <p class="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
                     Sri Lanka's most trusted recruitment partner since 2015. We bridge the gap between world-class employers and professional talent.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#contact" class="btn-gold px-10 py-5 rounded-2xl text-brand-dark font-bold text-lg flex items-center justify-center gap-3 group">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                    <a href="#contact" class="btn-gold px-6 sm:px-10 py-3 sm:py-5 rounded-xl sm:rounded-2xl text-brand-dark font-bold text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group">
                         Explore Opportunities
-                        <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform w-4 sm:w-5"></i>
                     </a>
-                    <a href="#about" class="glass px-10 py-5 rounded-2xl text-white font-bold text-lg flex items-center justify-center hover:bg-white/5 transition-all">
+                    <a href="#about" class="glass px-6 sm:px-10 py-3 sm:py-5 rounded-xl sm:rounded-2xl text-white font-bold text-sm sm:text-lg flex items-center justify-center hover:bg-white/5 transition-all">
                         Learn More
                     </a>
                 </div>
@@ -138,116 +141,116 @@
     </header>
 
     <!-- Stats Section -->
-    <section class="py-24 px-6 relative z-30 -mt-32">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
-                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">10k+</div>
-                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Placed Candidates</div>
+    <section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-30 -mt-16 sm:-mt-24 md:-mt-32">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+            <div class="glass p-4 sm:p-6 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-gold mb-2 sm:mb-3 font-outfit">10k+</div>
+                <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold">Placed Candidates</div>
             </div>
-            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
-                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">3062</div>
-                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">SLBFE License</div>
+            <div class="glass p-4 sm:p-6 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-gold mb-2 sm:mb-3 font-outfit">3062</div>
+                <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold">SLBFE License</div>
             </div>
-            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
-                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">15+</div>
-                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Partner Countries</div>
+            <div class="glass p-4 sm:p-6 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-gold mb-2 sm:mb-3 font-outfit">15+</div>
+                <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold">Partner Countries</div>
             </div>
-            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
-                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">100%</div>
-                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Job Satisfaction</div>
+            <div class="glass p-4 sm:p-6 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-gold mb-2 sm:mb-3 font-outfit">100%</div>
+                <div class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold">Job Satisfaction</div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-            <div class="relative about-image">
-                <div class="absolute -inset-10 bg-brand-gold/5 blur-[100px] rounded-full"></div>
+    <section id="about" class="py-12 sm:py-20 md:py-32 px-4 sm:px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-24 items-center">
+            <div class="relative about-image order-2 md:order-1">
+                <div class="absolute -inset-5 sm:-inset-10 bg-brand-gold/5 blur-[80px] sm:blur-[100px] rounded-full"></div>
                 <div class="relative">
-                    <img src="images/about.png" alt="Abhimaan Office" class="rounded-[3rem] shadow-2xl border border-white/5 relative z-10">
-                    <div class="absolute -bottom-10 -right-10 glass p-8 rounded-3xl border-brand-gold/30 z-20 hidden lg:block max-w-[280px]">
-                        <div class="flex items-start gap-5">
-                            <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-brand-gold/20">
-                                <i data-lucide="award" class="text-brand-dark w-8 h-8"></i>
+                    <img src="images/about.png" alt="Abhimaan Office" class="rounded-2xl sm:rounded-3xl md:rounded-[3rem] shadow-xl md:shadow-2xl border border-white/5 relative z-10">
+                    <div class="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 glass p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-brand-gold/30 z-20 hidden lg:block max-w-xs">
+                        <div class="flex items-start gap-3 sm:gap-5">
+                            <div class="w-10 sm:w-14 h-10 sm:h-14 bg-brand-gold rounded-lg sm:rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-brand-gold/20">
+                                <i data-lucide="award" class="text-brand-dark w-5 sm:w-8 h-5 sm:h-8"></i>
                             </div>
                             <div>
-                                <div class="font-bold text-white text-lg mb-1">Top Rated Agency</div>
-                                <p class="text-xs text-gray-400 leading-relaxed">Recognized for excellence in international recruitment 2024.</p>
+                                <div class="font-bold text-white text-sm sm:text-lg mb-1">Top Rated Agency</div>
+                                <p class="text-[10px] sm:text-xs text-gray-400 leading-relaxed">Recognized for excellence in international recruitment 2024.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="about-content">
-                <div class="inline-block px-4 py-1 rounded-md bg-brand-gold/10 text-brand-gold text-xs font-bold mb-6 uppercase tracking-[0.3em]">
+            <div class="about-content order-1 md:order-2">
+                <div class="inline-block px-3 sm:px-4 py-1 rounded-md bg-brand-gold/10 text-brand-gold text-[10px] sm:text-xs font-bold mb-4 sm:mb-6 uppercase tracking-[0.2em] sm:tracking-[0.3em]">
                     Our Legacy
                 </div>
-                <h2 class="text-4xl md:text-6xl font-bold mb-10 leading-[1.1] text-white">
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-10 leading-tight text-white">
                     Redefining Recruitment <br>
                     <span class="gold-gradient">with Integrity</span>
                 </h2>
-                <p class="text-gray-400 text-xl mb-8 leading-relaxed font-light">
+                <p class="text-gray-400 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed font-light">
                     Founded in 2015, Abhimaan Foreign Recruitment has evolved into a powerhouse of career opportunities, connecting Sri Lanka's finest talent with global industrial giants.
                 </p>
-                <div class="space-y-6 mb-12">
-                    <div class="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
-                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
-                            <i data-lucide="check-circle-2"></i>
+                <div class="space-y-3 sm:space-y-6 mb-8 sm:mb-12">
+                    <div class="flex items-center gap-3 sm:gap-5 p-2 sm:p-4 rounded-lg sm:rounded-2xl hover:bg-white/5 transition-colors group">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform flex-shrink-0">
+                            <i data-lucide="check-circle-2" class="w-5 sm:w-6"></i>
                         </div>
-                        <span class="text-gray-300 text-lg">Government Licensed & Regulated (#3062)</span>
+                        <span class="text-gray-300 text-sm sm:text-lg">Government Licensed & Regulated (#3062)</span>
                     </div>
-                    <div class="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
-                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
-                            <i data-lucide="users"></i>
+                    <div class="flex items-center gap-3 sm:gap-5 p-2 sm:p-4 rounded-lg sm:rounded-2xl hover:bg-white/5 transition-colors group">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform flex-shrink-0">
+                            <i data-lucide="users" class="w-5 sm:w-6"></i>
                         </div>
-                        <span class="text-gray-300 text-lg">Expert Career Guidance & Training</span>
+                        <span class="text-gray-300 text-sm sm:text-lg">Expert Career Guidance & Training</span>
                     </div>
-                    <div class="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
-                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
-                            <i data-lucide="globe"></i>
+                    <div class="flex items-center gap-3 sm:gap-5 p-2 sm:p-4 rounded-lg sm:rounded-2xl hover:bg-white/5 transition-colors group">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform flex-shrink-0">
+                            <i data-lucide="globe" class="w-5 sm:w-6"></i>
                         </div>
-                        <span class="text-gray-300 text-lg">Direct Links to 100+ Global Employers</span>
+                        <span class="text-gray-300 text-sm sm:text-lg">Direct Links to 100+ Global Employers</span>
                     </div>
                 </div>
-                <a href="#contact" class="inline-flex items-center gap-3 text-brand-gold font-bold text-lg group">
+                <a href="#contact" class="inline-flex items-center gap-2 sm:gap-3 text-brand-gold font-bold text-sm sm:text-lg group">
                     Start Your Application 
-                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform w-4 sm:w-5"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Countries Section -->
-    <section id="countries" class="py-32 px-6 relative overflow-hidden bg-[#071121]">
+    <section id="countries" class="py-12 sm:py-20 md:py-32 px-4 sm:px-6 relative overflow-hidden bg-[#071121]">
         <div class="absolute inset-0 noise-overlay"></div>
-        <div class="orb orb-blue w-[800px] h-[800px] -top-96 -right-96"></div>
-        <div class="orb orb-gold w-[600px] h-[600px] -bottom-48 -left-48 opacity-30"></div>
+        <div class="orb orb-blue w-[400px] sm:w-[600px] md:w-[800px] h-[400px] sm:h-[600px] md:h-[800px] -top-40 sm:-top-96 -right-40 sm:-right-96"></div>
+        <div class="orb orb-gold w-[300px] sm:w-[500px] md:w-[600px] h-[300px] sm:h-[500px] md:h-[600px] -bottom-24 sm:-bottom-48 -left-24 sm:-left-48 opacity-30"></div>
 
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 sm:mb-16 md:mb-20 gap-6 sm:gap-8">
                 <div class="max-w-2xl reveal">
                     <div class="section-label">Global Network</div>
-                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Countries <br><span class="gold-gradient">We Serve</span></h3>
-                    <p class="text-gray-400 text-lg font-light leading-relaxed">We connect top-tier Sri Lankan talent with the most prestigious employers across these leading nations. Explore opportunities worldwide.</p>
+                    <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">Countries <br><span class="gold-gradient">We Serve</span></h3>
+                    <p class="text-gray-400 text-sm sm:text-base md:text-lg font-light leading-relaxed">We connect top-tier Sri Lankan talent with the most prestigious employers across these leading nations. Explore opportunities worldwide.</p>
                 </div>
                 <div class="reveal">
-                    <div class="glass-light p-6 rounded-3xl flex gap-8 items-center border-brand-gold/20 shadow-2xl">
+                    <div class="glass-light p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col sm:flex-row gap-4 sm:gap-8 items-center border-brand-gold/20 shadow-2xl">
                         <div>
-                            <div class="text-4xl font-bold text-white font-outfit mb-1">15<span class="text-brand-gold">+</span></div>
-                            <div class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Partner Countries</div>
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-outfit mb-1">15<span class="text-brand-gold">+</span></div>
+                            <div class="text-gray-400 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">Partner Countries</div>
                         </div>
-                        <div class="w-px h-12 bg-white/10"></div>
+                        <div class="w-full sm:w-px h-px sm:h-12 bg-white/10"></div>
                         <div>
-                            <div class="text-4xl font-bold text-white font-outfit mb-1">5k<span class="text-brand-gold">+</span></div>
-                            <div class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Global Placements</div>
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-outfit mb-1">5k<span class="text-brand-gold">+</span></div>
+                            <div class="text-gray-400 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">Global Placements</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                 <!-- Country Card: Qatar -->
                 <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card">
                     <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80&w=800" alt="Qatar" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
@@ -450,48 +453,48 @@
 
             </div>
             
-            <div class="mt-16 text-center reveal">
-                <a href="#contact" class="inline-flex items-center gap-3 text-brand-gold font-bold text-lg group hover:text-white transition-colors">
+            <div class="mt-12 sm:mt-16 text-center reveal">
+                <a href="#contact" class="inline-flex items-center gap-2 sm:gap-3 text-brand-gold font-bold text-sm sm:text-lg group hover:text-white transition-colors">
                     View All Supported Countries
-                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform w-4 sm:w-5"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Job Categories Section -->
-    <section id="vacancies" class="py-32 px-6 relative overflow-hidden">
+    <section id="vacancies" class="py-12 sm:py-20 md:py-32 px-4 sm:px-6 relative overflow-hidden">
         <!-- Background Decorative Element -->
-        <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-gold/5 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2"></div>
+        <div class="absolute top-1/2 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-brand-gold/5 blur-[80px] sm:blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2"></div>
         
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 md:mb-20 gap-6 sm:gap-8">
                 <div class="max-w-2xl reveal">
-                    <h2 class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">Global Opportunities</h2>
-                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6">Explore Industries</h3>
-                    <p class="text-gray-400 text-lg">Discover professional pathways across various sectors with high-demand vacancies in top international destinations.</p>
+                    <h2 class="text-brand-gold font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-3 sm:mb-4">Global Opportunities</h2>
+                    <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6">Explore Industries</h3>
+                    <p class="text-gray-400 text-sm sm:text-base md:text-lg">Discover professional pathways across various sectors with high-demand vacancies in top international destinations.</p>
                 </div>
                 <div class="reveal">
-                    <a href="#contact" class="btn-gold px-10 py-4 rounded-2xl text-brand-dark font-bold shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:translate-y-[-4px] transition-all inline-block">View All Openings</a>
+                    <a href="#contact" class="btn-gold px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-brand-dark font-bold text-sm sm:text-base shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:translate-y-[-4px] transition-all inline-block">View All Openings</a>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 <!-- Industry 1: Construction -->
-                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal-left">
+                <div class="group relative min-h-[280px] sm:min-h-[350px] md:h-[400px] rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal-left">
                     <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="Construction" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                     
-                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
-                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
-                            <i data-lucide="hard-hat" class="w-8 h-8 text-brand-dark"></i>
+                    <div class="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-end">
+                        <div class="w-12 sm:w-14 h-12 sm:h-14 bg-brand-gold rounded-lg sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500 flex-shrink-0">
+                            <i data-lucide="hard-hat" class="w-6 sm:w-8 h-6 sm:h-8 text-brand-dark"></i>
                         </div>
-                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Construction & Infrastructure</h4>
-                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Masons, Carpenters, Steel Fixers, and Site Supervisors for major Gulf projects.</p>
+                        <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 font-outfit">Construction & Infrastructure</h4>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-4 sm:mb-6 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">Masons, Carpenters, Steel Fixers, and Site Supervisors for major Gulf projects.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">450+ Vacancies</span>
+                            <span class="text-brand-gold text-[9px] sm:text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-2 sm:px-4 py-1 sm:py-2 rounded-full border border-brand-gold/20">450+ Vacancies</span>
                             <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
-                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                                <i data-lucide="arrow-up-right" class="w-4 sm:w-5 h-4 sm:h-5"></i>
                             </div>
                         </div>
                     </div>
@@ -601,33 +604,33 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="pt-32 pb-16 px-6 bg-[#050c18] border-t border-white/5">
+    <footer id="contact" class="pt-12 sm:pt-20 md:pt-32 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 bg-[#050c18] border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-16 md:mb-20">
                 <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-8">
-                        <img src="images/logo.png" alt="Abhimaan Logo" class="h-14 w-auto drop-shadow-xl">
+                    <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+                        <img src="images/logo.png" alt="Abhimaan Logo" class="h-10 sm:h-14 w-auto drop-shadow-xl">
                         <div class="flex flex-col">
-                            <span class="text-2xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
-                            <span class="text-[10px] text-brand-gold tracking-[0.2em] uppercase font-bold">Foreign Recruitment</span>
+                            <span class="text-lg sm:text-2xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
+                            <span class="text-[8px] sm:text-[10px] text-brand-gold tracking-[0.1em] sm:tracking-[0.2em] uppercase font-bold">Foreign Recruitment</span>
                         </div>
                     </div>
-                    <p class="text-gray-500 leading-relaxed mb-8 text-sm">
+                    <p class="text-gray-500 leading-relaxed mb-6 sm:mb-8 text-xs sm:text-sm">
                         Sri Lanka's leading foreign recruitment agency (License #3062) specializing in professional placements since 2015.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-3 sm:gap-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-brand-gold hover:border-brand-gold transition-all">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                            <i data-lucide="facebook" class="w-4 sm:w-5 h-4 sm:h-5"></i>
                         </a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-brand-gold hover:border-brand-gold transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                            <i data-lucide="instagram" class="w-4 sm:w-5 h-4 sm:h-5"></i>
                         </a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-lg mb-8">Quick Links</h4>
-                    <ul class="space-y-4 text-gray-400 text-sm">
+                    <h4 class="text-white font-bold text-base sm:text-lg mb-6 sm:mb-8">Quick Links</h4>
+                    <ul class="space-y-2 sm:space-y-4 text-gray-400 text-xs sm:text-sm">
                         <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
                         <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
                         <li><a href="gallery.html" class="hover:text-brand-gold transition-colors">Gallery</a></li>
@@ -636,105 +639,105 @@
                 </div>
 
                 <div class="lg:col-span-1">
-                    <h4 class="text-white font-bold text-lg mb-8">Office Details</h4>
-                    <ul class="space-y-6 text-gray-400 text-sm">
-                        <li class="flex gap-4">
-                            <i data-lucide="map-pin" class="text-brand-gold shrink-0"></i>
-                            <span>No. 02, 2nd Floor, Udawalpola Road, Kadurugas Junction, Kurunegala</span>
+                    <h4 class="text-white font-bold text-base sm:text-lg mb-6 sm:mb-8">Office Details</h4>
+                    <ul class="space-y-4 sm:space-y-6 text-gray-400 text-xs sm:text-sm">
+                        <li class="flex gap-2 sm:gap-4">
+                            <i data-lucide="map-pin" class="text-brand-gold shrink-0 w-4 sm:w-5"></i>
+                            <span class="leading-snug">No. 02, 2nd Floor, Udawalpola Road, Kadurugas Junction, Kurunegala</span>
                         </li>
-                        <li class="flex gap-4">
-                            <i data-lucide="phone" class="text-brand-gold shrink-0"></i>
+                        <li class="flex gap-2 sm:gap-4">
+                            <i data-lucide="phone" class="text-brand-gold shrink-0 w-4 sm:w-5"></i>
                             <span>+94 77 902 9090<br>+94 374 937 937</span>
                         </li>
-                        <li class="flex gap-4">
-                            <i data-lucide="mail" class="text-brand-gold shrink-0"></i>
+                        <li class="flex gap-2 sm:gap-4">
+                            <i data-lucide="mail" class="text-brand-gold shrink-0 w-4 sm:w-5"></i>
                             <span>abhimaan3062@gmail.com</span>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-lg mb-8">Newsletter</h4>
-                    <p class="text-gray-500 text-sm mb-6">Stay updated with openings.</p>
+                    <h4 class="text-white font-bold text-base sm:text-lg mb-4 sm:mb-8">Newsletter</h4>
+                    <p class="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">Stay updated with openings.</p>
                     <div class="relative">
-                        <input type="email" placeholder="Your Email" class="w-full glass rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-gold transition-all">
-                        <button class="absolute right-2 top-2 bottom-2 bg-brand-gold text-brand-dark px-4 rounded-lg font-bold hover:scale-105 transition-transform">
-                            <i data-lucide="send" class="w-5 h-5"></i>
+                        <input type="email" placeholder="Your Email" class="w-full glass rounded-lg sm:rounded-xl px-3 sm:px-5 py-2 sm:py-4 text-white text-xs sm:text-sm focus:outline-none focus:border-brand-gold transition-all">
+                        <button class="absolute right-1 sm:right-2 top-1 bottom-1 bg-brand-gold text-brand-dark px-2 sm:px-4 rounded-lg font-bold hover:scale-105 transition-transform text-xs sm:text-sm">
+                            <i data-lucide="send" class="w-3 sm:w-5 h-3 sm:h-5"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-gray-600 text-xs uppercase tracking-widest">© 2024 Abhimaan Recruitment. License #3062.</p>
-                <p class="text-gray-600 text-xs">Designed with ❤️ for Global Careers</p>
+            <div class="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 text-center sm:text-left">
+                <p class="text-gray-600 text-[9px] sm:text-xs uppercase tracking-widest">© 2024 Abhimaan Recruitment. License #3062.</p>
+                <p class="text-gray-600 text-[9px] sm:text-xs">Designed with ❤️ for Global Careers</p>
             </div>
         </div>
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/94779029090" target="_blank" class="fixed bottom-10 right-10 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-95">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.406c0 6.556-5.333 11.888-11.888 11.888-2.01 0-3.987-.508-5.744-1.472l-6.24 1.635zm5.951-3.538c1.616.957 3.298 1.441 5.05 1.441 5.426 0 9.843-4.417 9.843-9.843s-4.417-9.843-9.843-9.843c-5.426 0-9.843 4.417-9.843 9.843 0 1.944.575 3.841 1.664 5.489l-1.092 3.99 4.103-1.077zm11.23-7.534c-.302-.152-1.791-.883-2.068-.984-.277-.101-.48-.152-.68.152-.2.302-.776.984-.951 1.186-.176.202-.352.228-.654.076-.302-.152-1.275-.47-2.428-1.498-.897-.8-1.502-1.788-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.529.151-.176.202-.302.302-.504.101-.202.05-.379-.025-.53-.075-.152-.68-1.639-.933-2.246-.246-.591-.497-.511-.68-.521-.176-.01-.378-.011-.58-.011-.202 0-.53.076-.807.379-.277.302-1.058 1.035-1.058 2.525 0 1.49 1.084 2.928 1.235 3.129.151.202 2.133 3.256 5.166 4.561.721.311 1.284.496 1.722.635.724.23 1.383.197 1.903.12.58-.087 1.791-.732 2.043-1.439.252-.707.252-1.313.176-1.439-.075-.126-.277-.202-.579-.354z"/></svg>
+    <a href="https://wa.me/94779029090" target="_blank" class="fixed bottom-4 right-4 sm:bottom-10 sm:right-10 z-50 w-14 sm:w-16 h-14 sm:h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-95">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" sm:width="30" sm:height="30" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.406c0 6.556-5.333 11.888-11.888 11.888-2.01 0-3.987-.508-5.744-1.472l-6.24 1.635zm5.951-3.538c1.616.957 3.298 1.441 5.05 1.441 5.426 0 9.843-4.417 9.843-9.843s-4.417-9.843-9.843-9.843c-5.426 0-9.843 4.417-9.843 9.843 0 1.944.575 3.841 1.664 5.489l-1.092 3.99 4.103-1.077zm11.23-7.534c-.302-.152-1.791-.883-2.068-.984-.277-.101-.48-.152-.68.152-.2.302-.776.984-.951 1.186-.176.202-.352.228-.654.076-.302-.152-1.275-.47-2.428-1.498-.897-.8-1.502-1.788-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.529.151-.176.202-.302.302-.504.101-.202.05-.379-.025-.53-.075-.152-.68-1.639-.933-2.246-.246-.591-.497-.511-.68-.521-.176-.01-.378-.011-.58-.011-.202 0-.53.076-.807.379-.277.302-1.058 1.035-1.058 2.525 0 1.49 1.084 2.928 1.235 3.129.151.202 2.133 3.256 5.166 4.561.721.311 1.284.496 1.722.635.724.23 1.383.197 1.903.12.58-.087 1.791-.732 2.043-1.439.252-.707.252-1.313.176-1.439-.075-.126-.277-.202-.579-.354z"/></svg>
     </a>
 
     <!-- Apply Now Modal -->
     <div id="apply-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
         <div class="absolute inset-0 bg-brand-dark/95 backdrop-blur-xl modal-backdrop"></div>
         
-        <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass rounded-[3rem] p-8 md:p-12 shadow-[0_50px_100px_rgba(0,0,0,0.5)] transform scale-95 opacity-0 transition-all duration-500 modal-content mx-4">
-            <button id="close-modal" class="absolute top-8 right-8 w-12 h-12 rounded-full glass-light flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-dark transition-all">
-                <i data-lucide="x" class="w-6 h-6"></i>
+        <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-4 sm:p-8 md:p-12 shadow-[0_50px_100px_rgba(0,0,0,0.5)] transform scale-95 opacity-0 transition-all duration-500 modal-content mx-4">
+            <button id="close-modal" class="absolute top-4 sm:top-8 right-4 sm:right-8 w-10 sm:w-12 h-10 sm:h-12 rounded-full glass-light flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-dark transition-all">
+                <i data-lucide="x" class="w-5 sm:w-6 h-5 sm:h-6"></i>
             </button>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
                 <div>
-                    <span class="text-brand-gold font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Application Form</span>
-                    <h2 class="text-4xl font-bold text-white mb-6 font-outfit">Start Your Global Journey</h2>
-                    <p class="text-gray-400 mb-10 leading-relaxed">Fill out the form below and our recruitment specialists will get back to you within 24-48 hours to discuss your opportunities.</p>
+                    <span class="text-brand-gold font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs mb-3 sm:mb-4 block">Application Form</span>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 font-outfit">Start Your Global Journey</h2>
+                    <p class="text-gray-400 mb-6 sm:mb-10 leading-relaxed text-xs sm:text-sm md:text-base">Fill out the form below and our recruitment specialists will get back to you within 24-48 hours to discuss your opportunities.</p>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 text-gray-300">
-                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                    <div class="space-y-3 sm:space-y-6">
+                        <div class="flex items-center gap-2 sm:gap-4 text-gray-300 text-xs sm:text-sm">
+                            <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg sm:rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                                <i data-lucide="check-circle" class="w-4 sm:w-5"></i>
                             </div>
-                            <span class="text-sm">Direct placement in top companies</span>
+                            <span>Direct placement in top companies</span>
                         </div>
-                        <div class="flex items-center gap-4 text-gray-300">
-                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <div class="flex items-center gap-2 sm:gap-4 text-gray-300 text-xs sm:text-sm">
+                            <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg sm:rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                                <i data-lucide="check-circle" class="w-4 sm:w-5"></i>
                             </div>
-                            <span class="text-sm">Complete visa & documentation support</span>
+                            <span>Complete visa & documentation support</span>
                         </div>
-                        <div class="flex items-center gap-4 text-gray-300">
-                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <div class="flex items-center gap-2 sm:gap-4 text-gray-300 text-xs sm:text-sm">
+                            <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg sm:rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                                <i data-lucide="check-circle" class="w-4 sm:w-5"></i>
                             </div>
-                            <span class="text-sm">Pre-departure orientation & training</span>
+                            <span>Pre-departure orientation & training</span>
                         </div>
                     </div>
                 </div>
 
-                <form id="application-form" class="space-y-5">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <form id="application-form" class="space-y-3 sm:space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
                         <div>
-                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Full Name</label>
-                            <input type="text" required placeholder="John Doe" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                            <label class="block text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-2 ml-1">Full Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full glass-light rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-4 text-white text-xs sm:text-base focus:outline-none transition-all placeholder:text-gray-600">
                         </div>
                         <div>
-                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Phone Number</label>
-                            <input type="tel" required placeholder="+94 77 123 4567" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                            <label class="block text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-2 ml-1">Phone Number</label>
+                            <input type="tel" required placeholder="+94 77 123 4567" class="w-full glass-light rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-4 text-white text-xs sm:text-base focus:outline-none transition-all placeholder:text-gray-600">
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Email Address</label>
-                        <input type="email" required placeholder="john@example.com" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                        <label class="block text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-2 ml-1">Email Address</label>
+                        <input type="email" required placeholder="john@example.com" class="w-full glass-light rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-4 text-white text-xs sm:text-base focus:outline-none transition-all placeholder:text-gray-600">
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
                         <div>
-                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Preferred Industry</label>
-                            <select required class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all appearance-none bg-transparent">
+                            <label class="block text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-2 ml-1">Preferred Industry</label>
+                            <select required class="w-full glass-light rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-4 text-white text-xs sm:text-base focus:outline-none transition-all appearance-none bg-transparent">
                                 <option value="" class="bg-brand-dark">Select Industry</option>
                                 <option value="construction" class="bg-brand-dark">Construction</option>
                                 <option value="healthcare" class="bg-brand-dark">Healthcare</option>
@@ -744,26 +747,26 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Experience (Years)</label>
-                            <input type="number" placeholder="0" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                            <label class="block text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-2 ml-1">Experience (Years)</label>
+                            <input type="number" placeholder="0" class="w-full glass-light rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-4 text-white text-xs sm:text-base focus:outline-none transition-all placeholder:text-gray-600">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Upload CV (Optional)</label>
+                        <label class="block text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-2 ml-1">Upload CV (Optional)</label>
                         <div class="relative">
                             <input type="file" class="hidden" id="cv-upload">
-                            <label for="cv-upload" class="w-full glass-light rounded-2xl px-6 py-4 text-gray-400 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-all">
+                            <label for="cv-upload" class="w-full glass-light rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-4 text-gray-400 text-xs sm:text-sm flex items-center justify-between cursor-pointer hover:bg-white/5 transition-all">
                                 <span>Choose PDF/Word file...</span>
-                                <i data-lucide="upload" class="w-5 h-5"></i>
+                                <i data-lucide="upload" class="w-4 sm:w-5 h-4 sm:h-5"></i>
                             </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full btn-gold py-5 rounded-2xl text-brand-dark font-bold text-lg shadow-[0_15px_35px_rgba(212,175,55,0.25)] mt-4">
+                    <button type="submit" class="w-full btn-gold py-3 sm:py-5 rounded-xl sm:rounded-2xl text-brand-dark font-bold text-sm sm:text-lg shadow-[0_15px_35px_rgba(212,175,55,0.25)] mt-2 sm:mt-4">
                         Submit Application
                     </button>
-                    <p class="text-center text-[10px] text-gray-500 uppercase tracking-widest mt-4">By submitting, you agree to our privacy policy.</p>
+                    <p class="text-center text-[8px] sm:text-[10px] text-gray-500 uppercase tracking-widest mt-2 sm:mt-4">By submitting, you agree to our privacy policy.</p>
                 </form>
             </div>
         </div>
