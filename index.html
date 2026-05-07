@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhimaan Foreign Recruitment | Premium Manpower Solutions</title>
+    <meta name="description" content="Sri Lanka's leading foreign recruitment agency (License #3062) specializing in placing skilled professionals worldwide since 2015.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a192f',
+                            navy: '#112240',
+                            gold: '#d4af37',
+                            goldLight: '#f4cf6a'
+                        }
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-brand-dark text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-4 py-4 md:px-6 md:py-3 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-5 py-2 md:px-8 md:py-1.5 transition-all duration-300">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/logo.png" alt="Abhimaan Logo" class="h-14 w-auto drop-shadow-xl">
+                <div class="flex flex-col hidden sm:flex">
+                    <span class="text-xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
+                    <span class="text-[10px] text-brand-gold tracking-[0.2em] uppercase font-bold">Foreign Recruitment</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-brand-gold">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="gallery.html" class="hover:text-brand-gold transition-colors">Gallery</a>
+                <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact Us</a>
+                <button data-apply-trigger class="btn-gold px-7 py-2.5 rounded-full text-brand-dark font-bold shadow-lg">Apply Now</button>
+            </div>
+
+            <button class="md:hidden text-white hover:text-brand-gold transition-colors">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[100] translate-x-full transition-transform duration-500 md:hidden flex flex-col p-8">
+            <div class="flex justify-between items-center mb-16">
+                <div class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Abhimaan Logo" class="h-10 w-auto drop-shadow-xl">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-tight text-white leading-none uppercase">ABHIMAAN</span>
+                    </div>
+                </div>
+                <button id="mobile-menu-close" class="w-12 h-12 rounded-full glass flex items-center justify-center text-white">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col gap-6 text-2xl font-bold font-outfit">
+                <a href="index.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">About Us</a>
+                <a href="gallery.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">Gallery</a>
+                <a href="contact.html" class="hover:text-brand-gold transition-colors border-b border-white/5 pb-4">Contact Us</a>
+            </div>
+
+            <div class="mt-auto">
+                <button data-apply-trigger class="btn-gold w-full py-5 rounded-2xl text-brand-dark font-bold text-center block text-lg shadow-xl shadow-brand-gold/10">Apply Now</button>
+                <div class="flex gap-4 mt-8 justify-center">
+                    <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/20 via-brand-dark/50 to-brand-dark z-10"></div>
+            <img src="images/hero-bg.png" alt="Hero Background" class="w-full h-full object-cover">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
+            <div class="max-w-4xl hero-content">
+                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Official License #3062</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-[1.05] tracking-tight">
+                    Your Gateway to <br>
+                    <span class="gold-gradient">Global Success</span>
+                </h1>
+                <p class="text-gray-400 text-xl md:text-2xl mb-12 max-w-2xl leading-relaxed font-light">
+                    Sri Lanka's most trusted recruitment partner since 2015. We bridge the gap between world-class employers and professional talent.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#contact" class="btn-gold px-10 py-5 rounded-2xl text-brand-dark font-bold text-lg flex items-center justify-center gap-3 group">
+                        Explore Opportunities
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                    <a href="#about" class="glass px-10 py-5 rounded-2xl text-white font-bold text-lg flex items-center justify-center hover:bg-white/5 transition-all">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="py-24 px-6 relative z-30 -mt-32">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">10k+</div>
+                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Placed Candidates</div>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">3062</div>
+                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">SLBFE License</div>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">15+</div>
+                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Partner Countries</div>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] text-center border-t border-brand-gold/30 stat-card">
+                <div class="text-5xl font-bold text-brand-gold mb-3 font-outfit">100%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Job Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="relative about-image">
+                <div class="absolute -inset-10 bg-brand-gold/5 blur-[100px] rounded-full"></div>
+                <div class="relative">
+                    <img src="images/about.png" alt="Abhimaan Office" class="rounded-[3rem] shadow-2xl border border-white/5 relative z-10">
+                    <div class="absolute -bottom-10 -right-10 glass p-8 rounded-3xl border-brand-gold/30 z-20 hidden lg:block max-w-[280px]">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-brand-gold/20">
+                                <i data-lucide="award" class="text-brand-dark w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-lg mb-1">Top Rated Agency</div>
+                                <p class="text-xs text-gray-400 leading-relaxed">Recognized for excellence in international recruitment 2024.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <div class="inline-block px-4 py-1 rounded-md bg-brand-gold/10 text-brand-gold text-xs font-bold mb-6 uppercase tracking-[0.3em]">
+                    Our Legacy
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold mb-10 leading-[1.1] text-white">
+                    Redefining Recruitment <br>
+                    <span class="gold-gradient">with Integrity</span>
+                </h2>
+                <p class="text-gray-400 text-xl mb-8 leading-relaxed font-light">
+                    Founded in 2015, Abhimaan Foreign Recruitment has evolved into a powerhouse of career opportunities, connecting Sri Lanka's finest talent with global industrial giants.
+                </p>
+                <div class="space-y-6 mb-12">
+                    <div class="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+                            <i data-lucide="check-circle-2"></i>
+                        </div>
+                        <span class="text-gray-300 text-lg">Government Licensed & Regulated (#3062)</span>
+                    </div>
+                    <div class="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <span class="text-gray-300 text-lg">Expert Career Guidance & Training</span>
+                    </div>
+                    <div class="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+                        <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <span class="text-gray-300 text-lg">Direct Links to 100+ Global Employers</span>
+                    </div>
+                </div>
+                <a href="#contact" class="inline-flex items-center gap-3 text-brand-gold font-bold text-lg group">
+                    Start Your Application 
+                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section id="countries" class="py-32 px-6 relative overflow-hidden bg-[#071121]">
+        <div class="absolute inset-0 noise-overlay"></div>
+        <div class="orb orb-blue w-[800px] h-[800px] -top-96 -right-96"></div>
+        <div class="orb orb-gold w-[600px] h-[600px] -bottom-48 -left-48 opacity-30"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+                <div class="max-w-2xl reveal">
+                    <div class="section-label">Global Network</div>
+                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Countries <br><span class="gold-gradient">We Serve</span></h3>
+                    <p class="text-gray-400 text-lg font-light leading-relaxed">We connect top-tier Sri Lankan talent with the most prestigious employers across these leading nations. Explore opportunities worldwide.</p>
+                </div>
+                <div class="reveal">
+                    <div class="glass-light p-6 rounded-3xl flex gap-8 items-center border-brand-gold/20 shadow-2xl">
+                        <div>
+                            <div class="text-4xl font-bold text-white font-outfit mb-1">15<span class="text-brand-gold">+</span></div>
+                            <div class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Partner Countries</div>
+                        </div>
+                        <div class="w-px h-12 bg-white/10"></div>
+                        <div>
+                            <div class="text-4xl font-bold text-white font-outfit mb-1">5k<span class="text-brand-gold">+</span></div>
+                            <div class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Global Placements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Country Card: Qatar -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card">
+                    <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80&w=800" alt="Qatar" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/qa.png" alt="Qatar Flag" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Qatar</h4>
+                        
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">High-end careers in aviation, energy, and mega-projects across Doha.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">120+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: Saudi Arabia -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1580418827493-f2b23a9d7015?auto=format&fit=crop&q=80&w=800" alt="Saudi Arabia" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/sa.png" alt="Saudi Arabia Flag" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Saudi Arabia</h4>
+                        
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">Massive growth in engineering and healthcare under Vision 2030.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">250+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: UAE -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800" alt="UAE" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/ae.png" alt="UAE Flag" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">UAE</h4>
+                        
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">Premium positions in Dubai and Abu Dhabi's world-class sectors.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">180+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: Kuwait -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card" style="transition-delay: 300ms;">
+                    <img src="https://images.unsplash.com/photo-1596700818228-4ce67851bb87?auto=format&fit=crop&q=80&w=800" alt="Kuwait" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/kw.png" alt="Kuwait Flag" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Kuwait</h4>
+                        
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">Specialized positions in oil & gas, healthcare, and infrastructure.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">80+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: Romania -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card">
+                    <img src="https://images.unsplash.com/photo-1584803730263-d14d2325ab90?auto=format&fit=crop&q=80&w=800" alt="Romania" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/ro.png" alt="Romania Flag" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Romania</h4>
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">European opportunities in construction, hospitality, and logistics.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">60+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: Japan -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" alt="Japan" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/jp.png" alt="Japan Flag" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Japan</h4>
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">Specialized skilled worker (SSW) programs and technical internships.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">35+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: Oman -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1549422830-ec38c4b12208?auto=format&fit=crop&q=80&w=800" alt="Oman" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/om.png" alt="Oman Flag" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Oman</h4>
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">Excellent opportunities in hospitality, oil, and construction.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">45+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Card: Malaysia -->
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[3/4] country-card" style="transition-delay: 300ms;">
+                    <img src="https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&q=80&w=800" alt="Malaysia" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                        <div class="w-12 h-12 mb-5 rounded-full overflow-hidden border-2 border-white/20 shadow-lg group-hover:border-brand-gold transition-colors duration-300 bg-brand-dark">
+                            <img src="https://flagcdn.com/w80/my.png" alt="Malaysia Flag" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-2 font-outfit group-hover:text-brand-gold transition-colors">Malaysia</h4>
+                        <div class="overflow-hidden mt-2">
+                            <div class="transition-all duration-500">
+                                <p class="text-gray-300 text-sm mb-6 leading-relaxed">Dynamic roles in manufacturing, plantation, and services.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] bg-brand-gold/10 px-4 py-2 rounded-full backdrop-blur-md border border-brand-gold/20">70+ Vacancies</span>
+                                    <div class="w-10 h-10 rounded-full glass-light flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 shadow-lg">
+                                        <i data-lucide="arrow-right" class="w-5 h-5 text-white group-hover:text-brand-dark transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-16 text-center reveal">
+                <a href="#contact" class="inline-flex items-center gap-3 text-brand-gold font-bold text-lg group hover:text-white transition-colors">
+                    View All Supported Countries
+                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Categories Section -->
+    <section id="vacancies" class="py-32 px-6 relative overflow-hidden">
+        <!-- Background Decorative Element -->
+        <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-gold/5 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div class="max-w-2xl reveal">
+                    <h2 class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">Global Opportunities</h2>
+                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6">Explore Industries</h3>
+                    <p class="text-gray-400 text-lg">Discover professional pathways across various sectors with high-demand vacancies in top international destinations.</p>
+                </div>
+                <div class="reveal">
+                    <a href="#contact" class="btn-gold px-10 py-4 rounded-2xl text-brand-dark font-bold shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:translate-y-[-4px] transition-all inline-block">View All Openings</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Industry 1: Construction -->
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal-left">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="Construction" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                            <i data-lucide="hard-hat" class="w-8 h-8 text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Construction & Infrastructure</h4>
+                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Masons, Carpenters, Steel Fixers, and Site Supervisors for major Gulf projects.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">450+ Vacancies</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 2: Healthcare -->
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800" alt="Healthcare" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                            <i data-lucide="heart-pulse" class="w-8 h-8 text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Healthcare & Caregiving</h4>
+                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Nurses, Caregivers, and Medical Technicians for European & Japanese facilities.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">120+ Vacancies</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 3: Hospitality -->
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal-right">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" alt="Hospitality" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                            <i data-lucide="utensils" class="w-8 h-8 text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Hospitality & Tourism</h4>
+                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Chefs, Waiters, Receptionists, and Housekeeping for 5-star international hotels.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">280+ Vacancies</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 4: Engineering -->
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal-left">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="Engineering" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                            <i data-lucide="settings" class="w-8 h-8 text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Technical & Engineering</h4>
+                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Mechanical, Electrical, and Civil Engineers for high-tech industrial sectors.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">85+ Vacancies</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 5: Domestic -->
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6954?auto=format&fit=crop&q=80&w=800" alt="Domestic" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                            <i data-lucide="home" class="w-8 h-8 text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Domestic Services</h4>
+                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Experienced House Maids and Domestic Staff for families across the Middle East.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">600+ Vacancies</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 6: Transportation -->
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-brand-gold/50 transition-all duration-500 reveal-right">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800" alt="Transportation" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center mb-6 shadow-xl transform rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                            <i data-lucide="truck" class="w-8 h-8 text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 font-outfit">Logistics & Transport</h4>
+                        <p class="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Heavy Vehicle Drivers, Warehouse Operators, and Logistics Coordinators.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">150+ Vacancies</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-32 pb-16 px-6 bg-[#050c18] border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-8">
+                        <img src="images/logo.png" alt="Abhimaan Logo" class="h-14 w-auto drop-shadow-xl">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
+                            <span class="text-[10px] text-brand-gold tracking-[0.2em] uppercase font-bold">Foreign Recruitment</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed mb-8 text-sm">
+                        Sri Lanka's leading foreign recruitment agency (License #3062) specializing in professional placements since 2015.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-brand-gold hover:border-brand-gold transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-brand-gold hover:border-brand-gold transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-8">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                        <li><a href="gallery.html" class="hover:text-brand-gold transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold text-lg mb-8">Office Details</h4>
+                    <ul class="space-y-6 text-gray-400 text-sm">
+                        <li class="flex gap-4">
+                            <i data-lucide="map-pin" class="text-brand-gold shrink-0"></i>
+                            <span>No. 02, 2nd Floor, Udawalpola Road, Kadurugas Junction, Kurunegala</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i data-lucide="phone" class="text-brand-gold shrink-0"></i>
+                            <span>+94 77 902 9090<br>+94 374 937 937</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i data-lucide="mail" class="text-brand-gold shrink-0"></i>
+                            <span>abhimaan3062@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-8">Newsletter</h4>
+                    <p class="text-gray-500 text-sm mb-6">Stay updated with openings.</p>
+                    <div class="relative">
+                        <input type="email" placeholder="Your Email" class="w-full glass rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-gold transition-all">
+                        <button class="absolute right-2 top-2 bottom-2 bg-brand-gold text-brand-dark px-4 rounded-lg font-bold hover:scale-105 transition-transform">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-gray-600 text-xs uppercase tracking-widest">© 2024 Abhimaan Recruitment. License #3062.</p>
+                <p class="text-gray-600 text-xs">Designed with ❤️ for Global Careers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/94779029090" target="_blank" class="fixed bottom-10 right-10 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-95">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.406c0 6.556-5.333 11.888-11.888 11.888-2.01 0-3.987-.508-5.744-1.472l-6.24 1.635zm5.951-3.538c1.616.957 3.298 1.441 5.05 1.441 5.426 0 9.843-4.417 9.843-9.843s-4.417-9.843-9.843-9.843c-5.426 0-9.843 4.417-9.843 9.843 0 1.944.575 3.841 1.664 5.489l-1.092 3.99 4.103-1.077zm11.23-7.534c-.302-.152-1.791-.883-2.068-.984-.277-.101-.48-.152-.68.152-.2.302-.776.984-.951 1.186-.176.202-.352.228-.654.076-.302-.152-1.275-.47-2.428-1.498-.897-.8-1.502-1.788-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.529.151-.176.202-.302.302-.504.101-.202.05-.379-.025-.53-.075-.152-.68-1.639-.933-2.246-.246-.591-.497-.511-.68-.521-.176-.01-.378-.011-.58-.011-.202 0-.53.076-.807.379-.277.302-1.058 1.035-1.058 2.525 0 1.49 1.084 2.928 1.235 3.129.151.202 2.133 3.256 5.166 4.561.721.311 1.284.496 1.722.635.724.23 1.383.197 1.903.12.58-.087 1.791-.732 2.043-1.439.252-.707.252-1.313.176-1.439-.075-.126-.277-.202-.579-.354z"/></svg>
+    </a>
+
+    <!-- Apply Now Modal -->
+    <div id="apply-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
+        <div class="absolute inset-0 bg-brand-dark/95 backdrop-blur-xl modal-backdrop"></div>
+        
+        <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass rounded-[3rem] p-8 md:p-12 shadow-[0_50px_100px_rgba(0,0,0,0.5)] transform scale-95 opacity-0 transition-all duration-500 modal-content mx-4">
+            <button id="close-modal" class="absolute top-8 right-8 w-12 h-12 rounded-full glass-light flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-dark transition-all">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <span class="text-brand-gold font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Application Form</span>
+                    <h2 class="text-4xl font-bold text-white mb-6 font-outfit">Start Your Global Journey</h2>
+                    <p class="text-gray-400 mb-10 leading-relaxed">Fill out the form below and our recruitment specialists will get back to you within 24-48 hours to discuss your opportunities.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm">Direct placement in top companies</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm">Complete visa & documentation support</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm">Pre-departure orientation & training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="application-form" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Full Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Phone Number</label>
+                            <input type="tel" required placeholder="+94 77 123 4567" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Email Address</label>
+                        <input type="email" required placeholder="john@example.com" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Preferred Industry</label>
+                            <select required class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all appearance-none bg-transparent">
+                                <option value="" class="bg-brand-dark">Select Industry</option>
+                                <option value="construction" class="bg-brand-dark">Construction</option>
+                                <option value="healthcare" class="bg-brand-dark">Healthcare</option>
+                                <option value="hospitality" class="bg-brand-dark">Hospitality</option>
+                                <option value="engineering" class="bg-brand-dark">Engineering</option>
+                                <option value="domestic" class="bg-brand-dark">Domestic</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Experience (Years)</label>
+                            <input type="number" placeholder="0" class="w-full glass-light rounded-2xl px-6 py-4 text-white focus:outline-none transition-all placeholder:text-gray-600">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Upload CV (Optional)</label>
+                        <div class="relative">
+                            <input type="file" class="hidden" id="cv-upload">
+                            <label for="cv-upload" class="w-full glass-light rounded-2xl px-6 py-4 text-gray-400 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-all">
+                                <span>Choose PDF/Word file...</span>
+                                <i data-lucide="upload" class="w-5 h-5"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full btn-gold py-5 rounded-2xl text-brand-dark font-bold text-lg shadow-[0_15px_35px_rgba(212,175,55,0.25)] mt-4">
+                        Submit Application
+                    </button>
+                    <p class="text-center text-[10px] text-gray-500 uppercase tracking-widest mt-4">By submitting, you agree to our privacy policy.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
