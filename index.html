@@ -615,11 +615,11 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="pt-12 sm:pt-20 md:pt-32 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 bg-[#050c18] border-t border-white/5">
+    <footer id="contact" class="site-footer pt-12 sm:pt-20 md:pt-32 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 bg-[#050c18] border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-16 md:mb-20">
-                <div class="lg:col-span-1">
-                    <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-16 md:mb-20">
+                <div class="footer-brand lg:col-span-1">
+                    <div class="footer-logo flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                         <img src="images/logo.png" alt="Abhimaan Logo" class="h-10 sm:h-14 w-auto drop-shadow-xl">
                         <div class="flex flex-col">
                             <span class="text-lg sm:text-2xl font-bold tracking-tight text-white leading-none">ABHIMAAN</span>
@@ -629,7 +629,7 @@
                     <p class="text-gray-500 leading-relaxed mb-6 sm:mb-8 text-xs sm:text-sm">
                         Sri Lanka's leading foreign recruitment agency (License #3062) specializing in professional placements since 2015.
                     </p>
-                    <div class="flex gap-3 sm:gap-4">
+                    <div class="footer-socials flex gap-3 sm:gap-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-brand-gold hover:border-brand-gold transition-all">
                             <i data-lucide="facebook" class="w-4 sm:w-5 h-4 sm:h-5"></i>
                         </a>
@@ -639,7 +639,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="footer-links">
                     <h4 class="text-white font-bold text-base sm:text-lg mb-6 sm:mb-8">Quick Links</h4>
                     <ul class="space-y-2 sm:space-y-4 text-gray-400 text-xs sm:text-sm">
                         <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
@@ -649,7 +649,7 @@
                     </ul>
                 </div>
 
-                <div class="lg:col-span-1">
+                <div class="footer-details lg:col-span-1">
                     <h4 class="text-white font-bold text-base sm:text-lg mb-6 sm:mb-8">Office Details</h4>
                     <ul class="space-y-4 sm:space-y-6 text-gray-400 text-xs sm:text-sm">
                         <li class="flex gap-2 sm:gap-4">
@@ -667,19 +667,18 @@
                     </ul>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold text-base sm:text-lg mb-4 sm:mb-8">Newsletter</h4>
-                    <p class="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">Stay updated with openings.</p>
-                    <div class="relative">
-                        <input type="email" placeholder="Your Email" class="w-full glass rounded-lg sm:rounded-xl px-3 sm:px-5 py-2 sm:py-4 text-white text-xs sm:text-sm focus:outline-none focus:border-brand-gold transition-all">
-                        <button class="absolute right-1 sm:right-2 top-1 bottom-1 bg-brand-gold text-brand-dark px-2 sm:px-4 rounded-lg font-bold hover:scale-105 transition-transform text-xs sm:text-sm">
-                            <i data-lucide="send" class="w-3 sm:w-5 h-3 sm:h-5"></i>
-                        </button>
-                    </div>
+                <div class="footer-cta">
+                    <h4 class="text-white font-bold text-base sm:text-lg mb-4 sm:mb-8">Start Your Journey</h4>
+                    <p class="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">Apply now and let our team guide your next overseas career move.</p>
+                    <button data-apply-trigger class="btn-gold footer-apply-btn w-full px-5 py-3 sm:py-4 rounded-xl text-brand-dark font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2 shadow-xl shadow-brand-gold/10">
+                        Apply Now
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
                 </div>
+
             </div>
 
-            <div class="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 text-center sm:text-left">
+            <div class="footer-bottom pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 text-center sm:text-left">
                 <p class="text-gray-600 text-[9px] sm:text-xs uppercase tracking-widest">© 2024 Abhimaan Recruitment. License #3062.</p>
             </div>
         </div>

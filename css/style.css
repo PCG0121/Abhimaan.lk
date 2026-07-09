@@ -1589,3 +1589,185 @@ input:focus, textarea:focus, select:focus {
         min-height: 1.85rem !important;
     }
 }
+
+/* Compact modern footer */
+.site-footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 2.5rem 1rem 1.4rem !important;
+    }
+
+    .site-footer .max-w-7xl {
+        padding: 0 !important;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.85rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .footer-brand,
+    .footer-details,
+    .footer-links,
+    .footer-cta {
+        min-height: 0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 1.1rem;
+        background: rgba(255, 255, 255, 0.035);
+        padding: 1rem;
+    }
+
+    .footer-brand,
+    .footer-cta {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo {
+        margin-bottom: 0.75rem !important;
+    }
+
+    .footer-logo img {
+        height: 2.4rem !important;
+        max-width: 7.6rem;
+        object-fit: contain;
+    }
+
+    .footer-logo span:first-child {
+        font-size: 1.05rem !important;
+    }
+
+    .footer-logo span:last-child {
+        font-size: 0.45rem !important;
+        letter-spacing: 0.12em !important;
+    }
+
+    .footer-brand p {
+        margin-bottom: 0.9rem !important;
+        font-size: 0.78rem !important;
+        line-height: 1.55 !important;
+    }
+
+    .footer-socials {
+        gap: 0.6rem !important;
+    }
+
+    .footer-socials a {
+        width: 2.35rem !important;
+        height: 2.35rem !important;
+        min-width: 2.35rem !important;
+        min-height: 2.35rem !important;
+    }
+
+    .site-footer h4 {
+        margin-bottom: 0.75rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .footer-links ul,
+    .footer-details ul {
+        gap: 0 !important;
+    }
+
+    .footer-links li + li {
+        margin-top: 0.42rem !important;
+    }
+
+    .footer-links a {
+        display: inline-flex;
+        min-height: 1.65rem;
+        align-items: center;
+        font-size: 0.78rem !important;
+    }
+
+    .footer-details li {
+        gap: 0.5rem !important;
+        align-items: flex-start;
+    }
+
+    .footer-details li + li {
+        margin-top: 0.7rem !important;
+    }
+
+    .footer-details span {
+        font-size: 0.72rem !important;
+        line-height: 1.45 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-details [data-lucide] {
+        width: 1rem !important;
+        height: 1rem !important;
+        margin-top: 0.08rem;
+    }
+
+    .footer-cta p {
+        margin-bottom: 0.85rem !important;
+        font-size: 0.78rem !important;
+        line-height: 1.55 !important;
+    }
+
+    .footer-apply-btn {
+        min-height: 2.8rem !important;
+        border-radius: 0.95rem !important;
+        font-size: 0.9rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .footer-bottom {
+        padding-top: 1rem !important;
+        gap: 0 !important;
+        justify-content: center !important;
+    }
+
+    .footer-bottom p {
+        font-size: 0.62rem !important;
+        line-height: 1.45 !important;
+        letter-spacing: 0.12em !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-footer {
+        padding: 2rem 0.75rem 1.2rem !important;
+    }
+
+    .footer-grid {
+        gap: 0.65rem !important;
+    }
+
+    .footer-brand,
+    .footer-details,
+    .footer-links,
+    .footer-cta {
+        padding: 0.85rem;
+        border-radius: 0.95rem;
+    }
+
+    .footer-details span,
+    .footer-links a {
+        font-size: 0.68rem !important;
+    }
+
+    .footer-cta p {
+        font-size: 0.7rem !important;
+    }
+
+    .footer-bottom p {
+        max-width: 24ch;
+    }
+}
