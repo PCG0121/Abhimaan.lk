@@ -1534,6 +1534,9 @@ input:focus, textarea:focus, select:focus {
     .hero-content .flex.flex-col {
         width: 100%;
         max-width: 340px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-items: stretch;
     }
 
     .hero-content a {
