@@ -1825,3 +1825,137 @@ input:focus, textarea:focus, select:focus {
         min-height: 1.85rem !important;
     }
 }
+
+/* Footer mobile fit: keep the same design, tighten spacing and sizing only. */
+@media (max-width: 768px) {
+    footer {
+        padding: 2.75rem 1rem 1.75rem !important;
+    }
+
+    footer > .max-w-7xl > .grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1.5rem 1.25rem !important;
+        margin-bottom: 2rem !important;
+        align-items: start;
+    }
+
+    footer > .max-w-7xl > .grid > div {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    footer .flex.items-center.gap-3.mb-8,
+    footer .flex.items-center.gap-2.sm\:gap-3.mb-6 {
+        gap: 0.65rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    footer img[alt="Abhimaan Logo"] {
+        height: 2.75rem !important;
+        max-width: 8rem;
+        object-fit: contain;
+    }
+
+    footer span.text-2xl,
+    footer span.text-lg {
+        font-size: 1.05rem !important;
+    }
+
+    footer span.text-\[11px\],
+    footer span.text-\[8px\] {
+        font-size: 0.52rem !important;
+        letter-spacing: 0.12em !important;
+    }
+
+    footer h4 {
+        margin-bottom: 0.85rem !important;
+        font-size: 0.95rem !important;
+        line-height: 1.25 !important;
+    }
+
+    footer p,
+    footer li,
+    footer a:not(.btn-gold) {
+        font-size: 0.8rem !important;
+        line-height: 1.5 !important;
+    }
+
+    footer p {
+        margin-bottom: 1rem !important;
+    }
+
+    footer ul {
+        margin: 0 !important;
+        padding-left: 0 !important;
+        gap: 0 !important;
+        list-style: none !important;
+    }
+
+    footer li + li {
+        margin-top: 0.45rem !important;
+    }
+
+    footer a {
+        color: inherit;
+        text-decoration: none !important;
+    }
+
+    footer .w-12.h-12,
+    footer .w-10.sm\:w-12.h-10.sm\:h-12 {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        min-width: 2.5rem !important;
+        min-height: 2.5rem !important;
+        border-radius: 0.75rem !important;
+    }
+
+    footer svg {
+        width: 1rem !important;
+        height: 1rem !important;
+    }
+
+    footer .btn-gold {
+        min-height: 2.75rem !important;
+        padding: 0 0.95rem !important;
+        border-radius: 0.8rem !important;
+        font-size: 0.82rem !important;
+        white-space: nowrap;
+    }
+
+    footer .border-t {
+        padding-top: 1.25rem !important;
+    }
+}
+
+@media (max-width: 520px) {
+    footer {
+        padding: 2.25rem 0.85rem 1.4rem !important;
+    }
+
+    footer > .max-w-7xl > .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+        margin-bottom: 1.6rem !important;
+    }
+
+    footer h4 {
+        margin-bottom: 0.65rem !important;
+    }
+
+    footer .flex.gap-4,
+    footer .flex.gap-3 {
+        gap: 0.65rem !important;
+    }
+
+    footer .btn-gold {
+        width: 100%;
+    }
+
+    footer .text-center p {
+        max-width: 28ch;
+        margin: 0 auto !important;
+        font-size: 0.68rem !important;
+        line-height: 1.5 !important;
+    }
+}
