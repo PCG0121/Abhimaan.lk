@@ -1977,3 +1977,12 @@ input:focus, textarea:focus, select:focus {
         line-height: 1.5 !important;
     }
 }
+
+/* Hide arrows inside Global Opportunities image cards. */
+.industry-card .flex.items-center.justify-between {
+    justify-content: flex-start;
+}
+
+.industry-card .flex.items-center.justify-between > .w-10.h-10.rounded-full {
+    display: none !important;
+}
