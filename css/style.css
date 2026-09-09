@@ -1989,3 +1989,111 @@ input:focus, textarea:focus, select:focus {
 .industry-card .flex.items-center.justify-between > .w-10.h-10.rounded-full {
     display: none !important;
 }
+
+/* Language switcher */
+.language-switcher {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.language-switcher-toggle {
+    min-width: 3rem;
+    height: 2rem;
+    padding: 0 0.65rem;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--brand-gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.language-switcher-toggle:hover,
+.language-switcher.is-open .language-switcher-toggle {
+    border-color: rgba(212, 175, 55, 0.6);
+    background: rgba(212, 175, 55, 0.12);
+}
+
+.language-switcher-panel {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    right: 0;
+    z-index: 100001;
+    min-width: 8.75rem;
+    padding: 0.35rem;
+    border: 1px solid rgba(212, 175, 55, 0.24);
+    border-radius: 0.9rem;
+    background: rgba(5, 12, 24, 0.96);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.36);
+    display: none;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.language-switcher.is-open .language-switcher-panel {
+    display: grid;
+    gap: 0.15rem;
+}
+
+.language-option {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.65rem;
+    color: rgba(230, 241, 255, 0.82);
+    text-align: left;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.1;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.language-option:hover,
+.language-option.is-active {
+    background: rgba(212, 175, 55, 0.14);
+    color: var(--brand-gold);
+}
+
+.language-switcher-menu {
+    width: 100%;
+    margin-bottom: 0.85rem;
+}
+
+.language-switcher-menu .language-switcher-toggle {
+    width: 100%;
+    min-height: 2.75rem;
+    border-radius: 0.9rem;
+}
+
+.language-switcher-menu .language-switcher-panel {
+    position: static;
+    margin-top: 0.5rem;
+    min-width: 100%;
+}
+
+.language-switcher-mobile .language-switcher-panel {
+    display: none !important;
+}
+
+body[data-language="si"],
+body[data-language="ta"] {
+    line-height: 1.65;
+}
+
+@media (max-width: 480px) {
+    .language-switcher-mobile .language-switcher-toggle {
+        min-width: 2.35rem;
+        height: 2rem;
+        padding: 0 0.45rem;
+        font-size: 0.66rem;
+    }
+
+    .language-switcher-mobile .language-switcher-panel {
+        right: -2.5rem;
+    }
+}
