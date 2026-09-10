@@ -1668,13 +1668,15 @@ input:focus, textarea:focus, select:focus {
 
 @media (max-width: 480px) {
     nav {
-        padding-left: 0.6rem !important;
-        padding-right: 0.6rem !important;
+        padding-left: 0.35rem !important;
+        padding-right: 0.35rem !important;
     }
 
     nav .glass {
-        padding-left: 0.65rem !important;
-        padding-right: 0.55rem !important;
+        width: 100%;
+        min-height: 48px;
+        padding-left: 0.75rem !important;
+        padding-right: 0.65rem !important;
     }
 
     nav img[alt="Abhimaan Logo"] {
@@ -1682,7 +1684,7 @@ input:focus, textarea:focus, select:focus {
     }
 
     nav .md\:hidden {
-        gap: 0.35rem !important;
+        gap: 0.45rem !important;
     }
 
     .mobile-apply-btn {
@@ -2087,13 +2089,17 @@ body[data-language="ta"] {
 
 @media (max-width: 480px) {
     .language-switcher-mobile .language-switcher-toggle {
-        min-width: 2.35rem;
-        height: 2rem;
-        padding: 0 0.45rem;
-        font-size: 0.66rem;
+        min-width: 2.65rem;
+        height: 2.1rem;
+        padding: 0 0.55rem;
+        border-color: rgba(244, 207, 106, 0.7);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 255, 255, 0.06));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 8px 18px rgba(0, 0, 0, 0.18);
+        font-size: 0.7rem;
     }
 
-    .language-switcher-mobile .language-switcher-panel {
-        right: -2.5rem;
+    .language-switcher-mobile .language-switcher-toggle svg,
+    .language-switcher-mobile .language-switcher-toggle i {
+        display: none;
     }
 }
