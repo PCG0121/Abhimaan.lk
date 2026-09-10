@@ -231,11 +231,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const textNodeKeys = new WeakMap();
     const sourceKeys = new Set(Object.values(languages).flatMap(language => Object.keys(language.translations)));
     const languageOrder = ['si', 'en', 'ta'];
+    const cycleLanguageOrder = ['en', 'si', 'ta'];
+    const languageStorageVersion = '2';
     const normalizeText = (value) => value.replace(/\s+/g, ' ').trim();
 
     const getCurrentLanguage = () => {
+        if (localStorage.getItem('abhimaan-language-version') !== languageStorageVersion) {
+            localStorage.removeItem('abhimaan-language');
+            localStorage.setItem('abhimaan-language-version', languageStorageVersion);
+            return 'en';
+        }
+
         const savedLanguage = localStorage.getItem('abhimaan-language');
-        return languageOrder.includes(savedLanguage) ? savedLanguage : 'si';
+        return languageOrder.includes(savedLanguage) ? savedLanguage : 'en';
     };
 
     const createLanguageSwitcher = (placement) => {
@@ -255,8 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (placement === 'mobile') {
             toggle.addEventListener('click', (event) => {
                 event.stopPropagation();
-                const currentIndex = languageOrder.indexOf(getCurrentLanguage());
-                const nextLanguage = languageOrder[(currentIndex + 1) % languageOrder.length];
+                const currentIndex = cycleLanguageOrder.indexOf(getCurrentLanguage());
+                const nextLanguage = cycleLanguageOrder[(currentIndex + 1) % cycleLanguageOrder.length];
                 applyLanguage(nextLanguage);
             });
             return switcher;
@@ -305,9 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const applyLanguage = (languageCode) => {
-        const activeLanguage = languageOrder.includes(languageCode) ? languageCode : 'si';
-        localStorage.setItem('abhimaan-language', activeLanguage);
+    const applyLanguage = (languageCode, persist = true) => {
+        const activeLanguage = languageOrder.includes(languageCode) ? languageCode : 'en';
+        if (persist) {
+            localStorage.setItem('abhimaan-language-version', languageStorageVersion);
+            localStorage.setItem('abhimaan-language', activeLanguage);
+        }
         document.documentElement.lang = activeLanguage === 'si' ? 'si-LK' : activeLanguage === 'ta' ? 'ta-LK' : 'en';
         document.body.dataset.language = activeLanguage;
 
@@ -329,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const sourceKey = textNodeKeys.get(node) || currentText;
             if (!sourceKeys.has(sourceKey)) return;
             textNodeKeys.set(node, sourceKey);
+            if (sourceKey === 'Apply Now' && node.parentElement?.closest('nav .btn-gold')) return;
 
             const leading = node.nodeValue.match(/^\s*/)?.[0] || '';
             const trailing = node.nodeValue.match(/\s*$/)?.[0] || '';
@@ -365,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
             switcher.querySelector('.language-switcher-toggle')?.setAttribute('aria-expanded', 'false');
         });
     });
-    applyLanguage(getCurrentLanguage());
+    applyLanguage(getCurrentLanguage(), false);
 
     // Register ScrollTrigger
     if (hasGsap && typeof ScrollTrigger !== 'undefined') {
