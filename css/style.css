@@ -1499,7 +1499,7 @@ input:focus, textarea:focus, select:focus {
     }
 
     .hero-bg-image {
-        object-position: 70% center;
+        object-position: center center;
         opacity: 0.78;
     }
 
@@ -1580,7 +1580,7 @@ input:focus, textarea:focus, select:focus {
     }
 
     .hero-bg-image {
-        object-position: 76% center;
+        object-position: center center;
     }
 
     .hero-content {
