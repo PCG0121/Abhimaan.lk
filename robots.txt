@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pcg0121.github.io/Abhimaan.lk/sitemap.xml
+Sitemap: https://abhimaan.lk/sitemap.xml
